@@ -21,7 +21,7 @@ class Shop extends ChangeNotifier {
         imagePath: 'assets/373.jpg'),
   ];
 
-  List<Product> _cart = [];
+  final List<Product> _cart = [];
 
   List<Product> get shop => _shop; // 这个操作相当于 _shop read only
 

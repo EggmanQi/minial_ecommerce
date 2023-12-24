@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:minial_ecommerce/components/my_button.dart';
+import 'package:minial_ecommerce/navigators/my_navigator.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -25,12 +26,13 @@ class IntroPage extends StatelessWidget {
             const SizedBox(height: 10),
             Text(
               "Premium Quality Products",
-              style: TextStyle(
-                  color: Theme.of(context).colorScheme.inversePrimary),
+              style: TextStyle(color: Theme.of(context).colorScheme.inversePrimary),
             ),
             const SizedBox(height: 10),
             MyButton(
-                onTap: () => Navigator.pushNamed(context, '/shop_page'),
+                onTap: () {
+                  MyNavigator.pushToShop(context);
+                },
                 child: const Icon(Icons.arrow_forward))
           ],
         ),
