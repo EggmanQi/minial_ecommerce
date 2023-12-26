@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:minial_ecommerce/components/my_list_title.dart';
+import 'package:minial_ecommerce/components/my_list_tile.dart';
 import 'package:minial_ecommerce/navigators/my_navigator.dart';
 import 'package:minial_ecommerce/pages/intro_page.dart';
 
@@ -49,14 +49,14 @@ class MyDrawer extends StatelessWidget {
                 color: Theme.of(context).colorScheme.inversePrimary,
               )),
               const SizedBox(height: 25),
-              MyListTitle(text: "Shop", icon: Icons.home, onTap: () => _didTapShopButton(context)),
-              MyListTitle(
+              MyListTile(text: "Shop", icon: Icons.home, onTap: () => _didTapShopButton(context)),
+              MyListTile(
                   text: "Cart", icon: Icons.shopping_cart, onTap: () => _didTapCardButton(context)),
             ],
           ),
           Padding(
               padding: const EdgeInsets.only(bottom: 25.0),
-              child: MyListTitle(
+              child: MyListTile(
                 text: "Exit",
                 icon: Icons.logout,
                 onTap: () => _didTapExitButton(context),

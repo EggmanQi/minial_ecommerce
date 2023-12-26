@@ -3,9 +3,9 @@ import 'package:minial_ecommerce/models/products.dart';
 import 'package:minial_ecommerce/models/shop.dart';
 import 'package:provider/provider.dart';
 
-class MyProductTitle extends StatelessWidget {
+class MyProductTile extends StatelessWidget {
   final Product product;
-  const MyProductTitle({super.key, required this.product});
+  const MyProductTile({super.key, required this.product});
 
   void addToCart(BuildContext context) {
     showDialog(

@@ -27,13 +27,26 @@ class Shop extends ChangeNotifier {
 
   List<Product> get cart => _cart;
 
+  List<List<Product>> cartProductsGroup = [];
+
   void addToCart(Product item) {
     _cart.add(item);
+    _sortCartItems();
     notifyListeners();
   }
 
   void removeFromCart(Product item) {
     _cart.remove(item);
+    _sortCartItems();
     notifyListeners();
+  }
+
+  void _sortCartItems() {
+    Map<String, List<Product>> nameGroups = {};
+    for (Product product in _cart) {
+      var nameGroup = nameGroups.putIfAbsent(product.name, () => []);
+      nameGroup.add(product);
+    }
+    cartProductsGroup = nameGroups.values.toList();
   }
 }
